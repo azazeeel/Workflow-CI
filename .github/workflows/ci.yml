@@ -5,7 +5,7 @@ on:
     branches: [ "main", "master" ]
   pull_request:
     branches: [ "main", "master" ]
-  workflow_dispatch: # Pemicu manual agar reviewer bisa melakukan tes
+  workflow_dispatch:
 
 jobs:
   build-and-train:
@@ -28,4 +28,4 @@ jobs:
     - name: Run MLflow Project
       run: |
         cd MLProject
-        mlflow run . --no-conda
+        mlflow run . --env-manager=local
